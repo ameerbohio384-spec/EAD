@@ -1,36 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Ameer Ali Bohio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ameer Ali Bohio | Portfolio</title>
+<style>
+    body {
+        background: #F8FAFC;
+        color: #0F172A;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    h1 { font-size: 24px; color: #1E293B; margin-bottom: 5px; }
+    p { color: #64748B; font-size: 15px; }
+    .links-section { margin: 20px 0; }
+    .links-section a {
+        display: inline-block;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        color: #0284C7;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .links-section a:hover { text-decoration: underline; }
+    
+    #contact-feature {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #E2E8F0;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #CBD5E1;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #0284C7;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    button:hover { background: #0369A1; }
+    #responseMsg { margin-top: 10px; color: #16A34A; font-weight: bold; text-align: center; }
+</style>
 </head>
-<body style="background:#F8FAFC; color:#0F172A; text-align:center; padding-top:5%; font-family: sans-serif;">
-<h1>Ameer Ali Bohio</h1>
-<p style="color:#0284C7;">Portfolio - Empty but Live</p>
+<body>
 
-<section id="contact-feature" style="max-width: 400px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
-    <h3 style="margin-top:0;">Get in Touch / Quick Message</h3>
-    <form id="quickContactForm" onsubmit="handleSubmission(event)">
-        <div style="margin-bottom: 10px;">
-            <input type="text" id="visitorName" placeholder="Your Name" required style="padding: 8px; width: 93%;">
-        </div>
-        <div style="margin-bottom: 10px;">
-            <input type="email" id="visitorEmail" placeholder="Your Email" required style="padding: 8px; width: 93%;">
-        </div>
-        <div style="margin-bottom: 10px;">
-            <textarea id="visitorMsg" placeholder="Your Message" required style="padding: 8px; width: 93%; height: 60px;"></textarea>
-        </div>
-        <button type="submit" style="padding: 8px 15px; background: #2ea44f; color: white; border: none; cursor: pointer; width: 100%;">Send Message</button>
-    </form>
-    <p id="responseMsg" style="margin-top: 10px; color: green; font-weight: bold; text-align: center;"></p>
-</section>
+<div class="container">
+    <h1>Ameer Ali Bohio</h1>
+    <p>Computer Science Student & Full-Stack Developer</p>
+    
+    <div class="links-section">
+        <a href="https://github.com/ameerbohio384-spec/EAD" target="_blank">GitHub Repository</a>
+        <a href="#contact-feature">Contact Me</a>
+    </div>
+
+    <section id="contact-feature">
+        <h3>Get in Touch</h3>
+        <form id="quickContactForm" onsubmit="handleSubmission(event)">
+            <input type="text" id="visitorName" placeholder="Your Name" required>
+            <input type="email" id="visitorEmail" placeholder="Your Email" required>
+            <textarea id="visitorMsg" placeholder="Your Message" rows="3" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="responseMsg"></p>
+    </section>
+</div>
 
 <script>
 function handleSubmission(e) {
     e.preventDefault();
     const name = document.getElementById('visitorName').value;
-    document.getElementById('responseMsg').innerText = `Thanks ${name}! Your test submission was captured successfully.`;
+    document.getElementById('responseMsg').innerText = `Thanks ${name}! Test submission received successfully.`;
     document.getElementById('quickContactForm').reset();
 }
 </script>
+
 </body>
 </html>
