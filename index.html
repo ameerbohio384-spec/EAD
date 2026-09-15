@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ameer Ali Bohio</title>
+<title>Ameer Ali Bohio</title>
 </head>
-<body style="background:#F8FAFC; color:#0F172A; text-align:center; padding-top:20%;">
-    <h1>Ameer Ali Bohio</h1>
-    <p style="color:#0284C7;">Portfolio - Empty but Live</p>
+<body style="background:#F8FAFC; color:#0F172A; text-align:center; padding-top:5%; font-family: sans-serif;">
+<h1>Ameer Ali Bohio</h1>
+<p style="color:#0284C7;">Portfolio - Empty but Live</p>
+
+<section id="contact-feature" style="max-width: 400px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+    <h3 style="margin-top:0;">Get in Touch / Quick Message</h3>
+    <form id="quickContactForm" onsubmit="handleSubmission(event)">
+        <div style="margin-bottom: 10px;">
+            <input type="text" id="visitorName" placeholder="Your Name" required style="padding: 8px; width: 93%;">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <input type="email" id="visitorEmail" placeholder="Your Email" required style="padding: 8px; width: 93%;">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <textarea id="visitorMsg" placeholder="Your Message" required style="padding: 8px; width: 93%; height: 60px;"></textarea>
+        </div>
+        <button type="submit" style="padding: 8px 15px; background: #2ea44f; color: white; border: none; cursor: pointer; width: 100%;">Send Message</button>
+    </form>
+    <p id="responseMsg" style="margin-top: 10px; color: green; font-weight: bold; text-align: center;"></p>
+</section>
+
+<script>
+function handleSubmission(e) {
+    e.preventDefault();
+    const name = document.getElementById('visitorName').value;
+    document.getElementById('responseMsg').innerText = `Thanks ${name}! Your test submission was captured successfully.`;
+    document.getElementById('quickContactForm').reset();
+}
+</script>
 </body>
 </html>
